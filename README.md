@@ -1,7 +1,14 @@
-### modules/logic.js
-modules/logic.js is a module and contain a function that is executed whenever the server receives a request. This function is exported with the name serverlogic 
-used by the module.exports instruction at the end of the file 
+**1. Requirements**
 
-### server.js
-With the require() function we load the file modules/logic and assign the exported module serverlogic to the constant serverlogic. Now we can use the module in 
-the createServer() method with createServer(serverlogic) and the server runs the code when it was started.
+- Install node.js and npm.
+You can read how to install node and npm on Mac OS on [Digitaldocblog](https://digitaldocblog.com/singleblog?article=1). Other ways to install node.js can be found on [nodejs.org](https://nodejs.org/en/download/).
+
+- git should be installed. A very good tutorial can be found here on [Medium](https://medium.com/@george.seif94/a-full-tutorial-on-how-to-use-github-88466bac7d42).
+
+**2. Install and run**
+- #> git clone https://github.com/prottlaender/node-part-1-simple-node-webserver-V2.git
+- #> cd node-part-1-simple-node-webserver-V2
+- #> node server.js
+
+**3. Documentation**
+Documentation and explanation of the code on [Digitaldocblog](https://digitaldocblog.com/singleblog?article=5).
