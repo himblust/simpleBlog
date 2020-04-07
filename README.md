@@ -11,4 +11,4 @@ You can read how to install node and npm on Mac OS on [Digitaldocblog](https://d
 - #> node server.js
 
 **3. Documentation**
-Documentation and explanation of the code on [Digitaldocblog](https://digitaldocblog.com/singleblog?article=5).
+- Documentation and explanation of the code on [Digitaldocblog](https://digitaldocblog.com/singleblog?article=5).
