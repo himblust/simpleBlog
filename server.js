@@ -10,6 +10,6 @@ const serverlogic = require('./modules/logic');
 const server = http.createServer(serverlogic);
 
 // 5. server listen for any incoming requests
-server.listen(3000);
+server.listen(3444);
 
-console.log('My node.js web server is alive and running at port 3000')
+console.log('My node.js web server is alive and running at port 3444')
