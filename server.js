@@ -1,15 +1,24 @@
-// server.js
 
-// load http integrated node module
+// load http module
 const http = require('http')
 
-// load self-developed module serverlogic from modules/logic.js
-const serverlogic = require('./modules/logic');
+// load third party Express module
+const express = require('express')
+const app = express()
+
+// define the routes
+app.get('/', (req, res) => {
+  res.send('Hello, this is my home Page')
+})
+
+app.get('/about', (req, res) => {
+  res.send('Hello, this is my about Page')
+})
 
 // create the server
-const server = http.createServer(serverlogic);
+const server = http.createServer(app);
 
-// 5. server listen for any incoming requests
-server.listen(3444);
+// server listen for any incoming requests
+server.listen(3000);
 
-console.log('My node.js web server is alive and running at port 3444')
+console.log('Server is running on PORT:3000, Visit http://localhost:3000')
