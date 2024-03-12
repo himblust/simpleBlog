@@ -6,9 +6,48 @@ const http = require('http')
 const express = require('express')
 const app = express()
 
+// load own modules
+const logger = require('./modules/logger')
+
+// Integrate Middleware
+app.use(logger);
+
 // define the routes
 app.get('/', (req, res) => {
-  res.send('Hello, this is my home Page')
+  
+  res.send({ error: 'This is an error message.'})
+})
+
+app.get('/users/:name?', (req, res) => {
+
+  path = req.path
+  method = req.method
+  username = req.params.name
+
+  res.send( {Path: path, Method: method, Username: username} )
+
+})
+
+// define Middleware
+var r1 = function (req, res, next) {
+  console.log('this is r1 ! The request will be responded by r4');
+  next();
+}
+
+var r2 = function (req, res, next) {
+  console.log('This is r2 ! The request will be responded by r4');
+  next();
+}
+
+var r3 = function (req, res, next) {
+  console.log('This is r3 ! The request will be responded by r4');
+  next();
+}
+
+var middlewareArray = [r1, r3, r2]
+
+app.get('/example', middlewareArray, (req, res) => {
+        res.send('This is example and show some Middleware')
 })
 
 app.get('/about', (req, res) => {
